@@ -1,25 +1,23 @@
-Dado('que estou logado como {string} e {string}') do |email, password|
-    visit "/"
-    find("input[placeholder='Seu e-email']").set email
-    find("input[type=password]").set password
+Dado('Login com {string} e {string}') do |email, password|
+    @email = email
 
-    click_button "Entrar"
-end
+    @login_page.open
+    @login_page.with(email, password)
+  end
 
 Dado('que acesso o formulário de cadastro de anúncios') do
     click_button "Criar anúncio"
-
     #isso é um checkpoint para garantir que estou no lugar correto
-    expect(page).to have_css "#equipoForm"
+    expect(page).to have_css "#equipoForm"   
 end
 
 Dado('que eu tenho o seguinte equipamento:') do |table|
     @anuncio = table.rows_hash
-    log @anuncio
+
+    MongoDB.new.remove_equipo(@anuncio[:nome], @email)
 end
 
 Quando('submeto o cadastro desse item') do
-
     thumb = Dir.pwd + "/features/support/fixtures/images/" + @anuncio[:thumb]
 
     find("#thumbnail input[type=file]", visible: false).set thumb

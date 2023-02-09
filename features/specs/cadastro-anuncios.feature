@@ -5,10 +5,12 @@ Funcionalidade: Cadastro de Anúncios
     Quero cadastrar meus equipamentos
     Para que eu possa disponibilizar para alocação
 
+    Contexto: Login
+        * Login com "betao@yahoo.com" e "pwd123"
+
     Cenário: Novo equipo
 
-        Dado que estou logado como "betao@yahoo.com" e "123456"
-            E que acesso o formulário de cadastro de anúncios
+        Dado que acesso o formulário de cadastro de anúncios
             E que eu tenho o seguinte equipamento:
             | thumb     | fender-sb.png |
             | nome      | Fender Strato |
