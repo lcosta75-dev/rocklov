@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.4.2)
+    activesupport (7.0.4.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -19,7 +19,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     cucumber (5.2.0)
       builder (~> 3.2, >= 3.2.4)
       cucumber-core (~> 8.0, >= 8.0.1)
@@ -61,13 +61,15 @@ GEM
     matrix (0.4.2)
     middleware (0.1.0)
     mini_mime (1.1.2)
-    minitest (5.17.0)
+    minitest (5.18.0)
     mongo (2.18.2)
       bson (>= 4.14.1, < 5.0.0)
     multi_test (0.1.2)
     nokogiri (1.14.1-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.14.1-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.1-x86_64-linux)
       racc (~> 1.4)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
@@ -112,6 +114,7 @@ GEM
 PLATFORMS
   x64-mingw-ucrt
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   capybara (= 3.38)
